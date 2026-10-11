@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:decompress/steel_ingot_from_steel_block"
+        "recipes": "resource_cracker:decompress/steel_ingot_from_steel_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

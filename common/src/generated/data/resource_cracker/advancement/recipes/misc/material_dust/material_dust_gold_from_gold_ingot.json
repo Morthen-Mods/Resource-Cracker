@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:material_dust/material_dust_gold_from_gold_ingot"
+        "recipes": "resource_cracker:material_dust/material_dust_gold_from_gold_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

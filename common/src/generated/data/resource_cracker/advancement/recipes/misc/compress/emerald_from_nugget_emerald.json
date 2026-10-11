@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:compress/emerald_from_nugget_emerald"
+        "recipes": "resource_cracker:compress/emerald_from_nugget_emerald"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

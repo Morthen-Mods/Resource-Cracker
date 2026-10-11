@@ -1,22 +1,25 @@
 package net.morthen.resource_cracker.provider;
 
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.PackOutput;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.core.registries.MultiRegistryBootstrap;
 import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Recipe;
 import net.morthen.resource_cracker.helper.BaseRecipes;
 import net.morthen.resource_cracker.item.tags.CrackerItemTags;
 import net.morthen.resource_cracker.registries.BlockRegistry;
 import net.morthen.resource_cracker.registries.ItemRegistry;
 
-import java.util.concurrent.CompletableFuture;
-
 public class Recipes extends BaseRecipes {
 
-    protected Recipes(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
-        super(provider, recipeOutput);
+    public static MultiRegistryBootstrap create() {
+        return RecipeProvider.asBootstrap(Recipes::new);
+    }
+
+    protected Recipes(BootstrapContext<Recipe<?>> recipes, BootstrapContext<Advancement> advancements) {
+        super(recipes, advancements);
     }
 
     @Override
@@ -132,7 +135,7 @@ public class Recipes extends BaseRecipes {
                 .define('C', CrackerItemTags.CARBON_DUSTS)
                 .define('I', CrackerItemTags.IRON_DUSTS)
                 .unlockedBy("has_carbon_dust", has(CrackerItemTags.CARBON_DUSTS))
-                .save(this.recipeOutput, path("crafting/steel_dust"));
+                .save(this.output, path("crafting/steel_dust"));
 
         this.shaped(RecipeCategory.MISC, Items.GUNPOWDER, 3)
                 .pattern("SPC")
@@ -140,7 +143,7 @@ public class Recipes extends BaseRecipes {
                 .define('P', CrackerItemTags.SALTPETER_DUSTS)
                 .define('C', Items.CHARCOAL)
                 .unlockedBy(getHasName(Items.CHARCOAL), has(Items.CHARCOAL))
-                .save(this.recipeOutput, path("crafting/gunpowder_from_sulfur_saltpeter_charcoal"));
+                .save(this.output, path("crafting/gunpowder_from_sulfur_saltpeter_charcoal"));
 
         this.shaped(RecipeCategory.MISC, Items.SLIME_BALL, 2)
                 .pattern("HCS")
@@ -148,30 +151,13 @@ public class Recipes extends BaseRecipes {
                 .define('C', Items.DYE.green())
                 .define('S', CrackerItemTags.SALTPETER_DUSTS)
                 .unlockedBy("has_saltpeter_dust", has(CrackerItemTags.SALTPETER_DUSTS))
-                .save(this.recipeOutput, path("crafting/slimeball_from_comb_dye_saltpeter"));
+                .save(this.output, path("crafting/slimeball_from_comb_dye_saltpeter"));
 
         this.shaped(RecipeCategory.MISC, ItemRegistry.MATERIAL_DUST_NETHERITE.get(), 1)
                 .pattern("NNN").pattern("NGG").pattern("G  ")
                 .define('N', CrackerItemTags.NETHERITE_SCRAP_DUSTS)
                 .define('G', CrackerItemTags.GOLD_DUSTS)
                 .unlockedBy("has_netherite_scrap_dust", has(CrackerItemTags.NETHERITE_SCRAP_DUSTS))
-                .save(this.recipeOutput, path("crafting/netherite_dust_from_scrap_gold_dust"));
-    }
-
-    public static class Runner extends RecipeProvider.Runner {
-
-        public Runner(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> provider) {
-            super(packOutput, provider);
-        }
-
-        @Override
-        protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
-            return new Recipes(provider, recipeOutput);
-        }
-
-        @Override
-        public String getName() {
-            return "Resource Cracker Recipes";
-        }
+                .save(this.output, path("crafting/netherite_dust_from_scrap_gold_dust"));
     }
 }

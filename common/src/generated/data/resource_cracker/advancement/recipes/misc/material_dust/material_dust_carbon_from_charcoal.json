@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:material_dust/material_dust_carbon_from_charcoal"
+        "recipes": "resource_cracker:material_dust/material_dust_carbon_from_charcoal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

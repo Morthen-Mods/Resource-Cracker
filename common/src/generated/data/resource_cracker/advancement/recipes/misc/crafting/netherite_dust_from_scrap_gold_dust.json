@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:crafting/netherite_dust_from_scrap_gold_dust"
+        "recipes": "resource_cracker:crafting/netherite_dust_from_scrap_gold_dust"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

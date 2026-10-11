@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:material_dust/material_dust_emerald_from_deepslate_emerald_ore"
+        "recipes": "resource_cracker:material_dust/material_dust_emerald_from_deepslate_emerald_ore"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

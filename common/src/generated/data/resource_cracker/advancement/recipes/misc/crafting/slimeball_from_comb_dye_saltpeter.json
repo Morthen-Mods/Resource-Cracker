@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:crafting/slimeball_from_comb_dye_saltpeter"
+        "recipes": "resource_cracker:crafting/slimeball_from_comb_dye_saltpeter"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

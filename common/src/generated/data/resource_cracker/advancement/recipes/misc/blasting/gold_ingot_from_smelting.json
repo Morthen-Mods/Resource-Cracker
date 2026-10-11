@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:blasting/gold_ingot_from_smelting"
+        "recipes": "resource_cracker:blasting/gold_ingot_from_smelting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

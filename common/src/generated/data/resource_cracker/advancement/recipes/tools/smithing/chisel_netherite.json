@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:smithing/chisel_netherite"
+        "recipes": "resource_cracker:smithing/chisel_netherite"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

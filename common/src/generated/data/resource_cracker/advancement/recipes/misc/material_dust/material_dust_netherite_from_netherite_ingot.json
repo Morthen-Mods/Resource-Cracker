@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:material_dust/material_dust_netherite_from_netherite_ingot"
+        "recipes": "resource_cracker:material_dust/material_dust_netherite_from_netherite_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

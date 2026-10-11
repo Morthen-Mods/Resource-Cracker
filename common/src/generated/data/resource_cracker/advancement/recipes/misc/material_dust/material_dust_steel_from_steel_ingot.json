@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:material_dust/material_dust_steel_from_steel_ingot"
+        "recipes": "resource_cracker:material_dust/material_dust_steel_from_steel_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

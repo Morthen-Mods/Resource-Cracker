@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:scythe/scythe_iron"
+        "recipes": "resource_cracker:scythe/scythe_iron"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

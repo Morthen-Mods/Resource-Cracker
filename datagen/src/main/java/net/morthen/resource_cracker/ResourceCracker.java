@@ -22,10 +22,10 @@ public class ResourceCracker {
         @SubscribeEvent
         public static void generateData(GatherDataEvent.Client event) {
             event.createReloadableRegistryObjects(new RegistrySetBuilder()
-                    .add(Registries.LOOT_TABLE, Loot.create()));
+                    .add(Registries.LOOT_TABLE, Loot.create())
+                    .add(Recipes.create()));
 
             event.createBlockAndItemTags(BlockTags::new, ItemTags::new);
-            event.createProvider(Recipes.Runner::new);
             event.createProvider(Models::new);
         }
     }

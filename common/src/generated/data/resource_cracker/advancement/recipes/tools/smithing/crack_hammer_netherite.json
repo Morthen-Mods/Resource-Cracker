@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:smithing/crack_hammer_netherite"
+        "recipes": "resource_cracker:smithing/crack_hammer_netherite"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

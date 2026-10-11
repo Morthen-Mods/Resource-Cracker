@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:crack_hammer/crack_hammer_copper"
+        "recipes": "resource_cracker:crack_hammer/crack_hammer_copper"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

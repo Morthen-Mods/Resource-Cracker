@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:material_dust/material_dust_copper_from_raw_copper"
+        "recipes": "resource_cracker:material_dust/material_dust_copper_from_raw_copper"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

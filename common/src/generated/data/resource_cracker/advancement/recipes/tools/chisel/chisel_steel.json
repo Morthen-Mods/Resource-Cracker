@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "resource_cracker:chisel/chisel_steel"
+        "recipes": "resource_cracker:chisel/chisel_steel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
