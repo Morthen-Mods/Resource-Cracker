@@ -1,5 +1,7 @@
 package net.morthen.resource_cracker;
 
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.morthen.resource_cracker.provider.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -19,9 +21,11 @@ public class ResourceCracker {
 
         @SubscribeEvent
         public static void generateData(GatherDataEvent.Client event) {
+            event.createReloadableRegistryObjects(new RegistrySetBuilder()
+                    .add(Registries.LOOT_TABLE, Loot.create()));
+
             event.createBlockAndItemTags(BlockTags::new, ItemTags::new);
             event.createProvider(Recipes.Runner::new);
-            event.createProvider(Loot::create);
             event.createProvider(Models::new);
         }
     }
