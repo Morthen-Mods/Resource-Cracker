@@ -3,6 +3,7 @@ package net.morthen.resource_cracker;
 import net.minecraft.resources.Identifier;
 import net.morthen.resource_cracker.config.LootConfig;
 import net.morthen.resource_cracker.config.ToolConfig;
+import net.morthen.resource_cracker.modifier.LootModifier;
 import net.morthen.resource_cracker.registries.BlockRegistry;
 import net.morthen.resource_cracker.registries.CreativeTabRegistry;
 import net.morthen.resource_cracker.registries.DataComponentRegistry;
@@ -29,5 +30,7 @@ public class CrackerConstants {
         BlockRegistry.init();
         ItemRegistry.init();
         CreativeTabRegistry.init();
+
+        LootModifier.init();
     }
 }

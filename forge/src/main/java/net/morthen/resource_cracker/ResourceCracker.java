@@ -1,21 +1,10 @@
 package net.morthen.resource_cracker;
 
-import net.minecraftforge.event.LootTableLoadEvent;
-import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.morthen.resource_cracker.modifier.LootModifier;
 
 @Mod(CrackerConstants.MOD_ID)
 public class ResourceCracker {
     public ResourceCracker() {
         CrackerConstants.commonInit();
-    }
-
-    @Mod.EventBusSubscriber(modid = CrackerConstants.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-    public static class Test {
-        @SubscribeEvent
-        public static void loadTables(LootTableLoadEvent event) {
-            LootModifier.init();
-        }
     }
 }
