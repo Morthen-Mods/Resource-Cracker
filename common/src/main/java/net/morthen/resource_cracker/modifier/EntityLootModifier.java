@@ -10,9 +10,9 @@ import java.util.List;
 public class EntityLootModifier {
 
     public static void init(LootTableModifier modifier) {
-        modifier.addItem(ItemRegistry.GARLIC, 1f, () -> LootConfig.garlicFromZombie, List.of(EntityTypes.ZOMBIE.getDefaultLootTable().get()));
+        modifier.addItem(ItemRegistry.GARLIC, 1, () -> LootConfig.garlicFromZombie, List.of(EntityTypes.ZOMBIE.getDefaultLootTable().get()));
 
-        modifier.addItem(ItemRegistry.MATERIAL_DUST_SULFUR, 1f, () -> LootConfig.sulfurFromCreeper, List.of(EntityTypes.CREEPER.getDefaultLootTable().get()));
-        modifier.addItem(ItemRegistry.MATERIAL_DUST_SALTPETER, 1f, () -> LootConfig.saltpeterFromCreeper, List.of(EntityTypes.CREEPER.getDefaultLootTable().get()));
+        modifier.addItem(ItemRegistry.MATERIAL_DUST_SULFUR, 1, () -> LootConfig.sulfurFromCreeper, List.of(EntityTypes.CREEPER.getDefaultLootTable().get()));
+        modifier.addItem(ItemRegistry.MATERIAL_DUST_SALTPETER, 1, () -> LootConfig.saltpeterFromCreeper, List.of(EntityTypes.CREEPER.getDefaultLootTable().get()));
     }
 }

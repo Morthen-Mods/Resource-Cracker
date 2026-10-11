@@ -1,6 +1,7 @@
 package net.morthen.resource_cracker.block.base;
 
 import com.mojang.serialization.MapCodec;
+import net.minecraft.util.Prediction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -15,7 +16,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import org.jetbrains.annotations.Nullable;
 
 public class SpringBlock extends Block {
-    public static final MapCodec<SpringBlock> CODEC = simpleCodec(SpringBlock::new);
 
     public SpringBlock(Properties properties) {
         super(properties);
@@ -28,7 +28,7 @@ public class SpringBlock extends Block {
             return InteractionResult.SUCCESS;
         }
         if (!player.getInventory().add(stack)) {
-            player.drop(stack, false);
+            player.drop(stack, false, Prediction.SERVER_ONLY);
         }
         handStack.shrink(1);
         return InteractionResult.SUCCESS;

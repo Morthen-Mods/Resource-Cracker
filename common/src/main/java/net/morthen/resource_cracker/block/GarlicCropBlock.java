@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.morthen.resource_cracker.registries.ItemRegistry;
 
 public class GarlicCropBlock extends CropBlock {
-    public final MapCodec<GarlicCropBlock> CODEC = simpleCodec(GarlicCropBlock::new);
     public static final IntegerProperty AGE = BlockStateProperties.AGE_5;
     public final int MAX_AGE = 5;
 
@@ -38,10 +37,5 @@ public class GarlicCropBlock extends CropBlock {
     @Override
     public void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(AGE);
-    }
-
-    @Override
-    public MapCodec<? extends CropBlock> codec() {
-        return CODEC;
     }
 }
