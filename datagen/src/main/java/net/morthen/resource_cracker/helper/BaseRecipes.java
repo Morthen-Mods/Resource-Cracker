@@ -6,6 +6,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
@@ -22,29 +23,29 @@ public abstract class BaseRecipes extends RecipeProvider {
         super(recipes, advancements);
     }
 
-    public void crackHammerRecipe(ItemLike result, ItemLike ingot) {
+    public void crackHammerRecipe(ItemLike result, TagKey<Item> ingot) {
         this.shaped(RecipeCategory.TOOLS, result)
                 .pattern(" IT").pattern(" SI").pattern("S  ")
                 .define('T', CrackerItemTags.CRACK_HAMMER_INGREDIENTS)
                 .define('S', Items.STICK).define('I', ingot)
-                .unlockedBy(getHasName(ingot), has(ingot))
+                .unlockedBy(getTagHasName(ingot), has(ingot))
                 .save(this.output, path("crack_hammer/" + getSimpleRecipeName(result)));
     }
 
-    public void chiselRecipe(ItemLike result, ItemLike ingot) {
+    public void chiselRecipe(ItemLike result, TagKey<Item> ingot) {
         this.shaped(RecipeCategory.TOOLS, result)
                 .pattern(" I").pattern("S ")
                 .define('I', ingot).define('S', Items.STICK)
-                .unlockedBy(getHasName(ingot), has(ingot))
+                .unlockedBy(getTagHasName(ingot), has(ingot))
                 .save(this.output, path("chisel/" + getSimpleRecipeName(result)));
     }
 
-    public void scytheRecipe(ItemLike result, ItemLike ingot) {
+    public void scytheRecipe(ItemLike result, TagKey<Item> ingot) {
         this.shaped(RecipeCategory.TOOLS, result)
                 .pattern("IIT").pattern(" SI").pattern("S  ")
                 .define('T', CrackerItemTags.SCYTHE_INGREDIENTS)
                 .define('S', Items.STICK).define('I', ingot)
-                .unlockedBy(getHasName(ingot), has(ingot))
+                .unlockedBy(getTagHasName(ingot), has(ingot))
                 .save(this.output, path("scythe/" + getSimpleRecipeName(result)));
     }
 
@@ -53,6 +54,13 @@ public abstract class BaseRecipes extends RecipeProvider {
                 .requires(input).requires(CrackerItemTags.CRACK_HAMMER)
                 .unlockedBy("has_crack_hammer", has(CrackerItemTags.CRACK_HAMMER))
                 .save(this.output, path("material_dust/" + getConversionRecipeName(result, input)));
+    }
+
+    public void materialDustRecipe(ItemLike result, TagKey<Item> input, int amount) {
+        this.shapeless(RecipeCategory.MISC, result, amount)
+                .requires(input).requires(CrackerItemTags.CRACK_HAMMER)
+                .unlockedBy("has_crack_hammer", has(CrackerItemTags.CRACK_HAMMER))
+                .save(this.output, path("material_dust/" + getItemName(result) + "_from_" + getTagName(input)));
     }
 
     public void compressRecipe(ItemLike result, ItemLike input) {
@@ -102,14 +110,22 @@ public abstract class BaseRecipes extends RecipeProvider {
                 .save(this.output, path(getSmeltingRecipeName(output)));
     }
 
-    public void smithingUpgrade(Item output, ItemLike upgradeItem, ItemLike upgradeMaterial) {
+    public void smithingUpgrade(Item output, ItemLike upgradeItem, TagKey<Item> upgradeMaterial) {
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
-                        Ingredient.of(upgradeItem), Ingredient.of(upgradeMaterial),
+                        Ingredient.of(upgradeItem), tag(upgradeMaterial),
                         RecipeCategory.TOOLS, output)
                 .unlocks(getHasName(upgradeItem), has(upgradeItem))
-                .unlocks(getHasName(upgradeMaterial), has(upgradeMaterial))
+                .unlocks(getTagHasName(upgradeMaterial), has(upgradeMaterial))
                 .save(this.output, path("smithing/" + getSimpleRecipeName(output)));
+    }
+
+    protected static String getTagName(TagKey<Item> tag) {
+        return tag.location().getPath().replace('/', '_');
+    }
+
+    protected static String getTagHasName(TagKey<Item> tag) {
+        return "has_" + getTagName(tag);
     }
 
     protected ResourceKey<Recipe<?>> path(String path) {

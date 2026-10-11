@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     "minecraft:raw_iron",
-    "#c:tool/crack_hammer"
+    "#c:tools/crack_hammer"
   ],
   "result": {
     "count": 2,

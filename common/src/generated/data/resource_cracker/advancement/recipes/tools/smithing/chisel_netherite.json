@@ -11,11 +11,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_netherite_ingot": {
+    "has_ingots_netherite": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:netherite_ingot"
+            "items": "#c:ingots/netherite"
           }
         ]
       },
@@ -32,7 +32,7 @@
     [
       "has_the_recipe",
       "has_chisel_diamond",
-      "has_netherite_ingot"
+      "has_ingots_netherite"
     ]
   ],
   "rewards": {

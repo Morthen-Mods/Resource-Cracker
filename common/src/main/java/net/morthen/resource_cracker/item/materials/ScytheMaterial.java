@@ -27,10 +27,10 @@ public record ScytheMaterial(int durability, float damageBonus, int enchantmentV
     private static final Identifier EXTENDED_ENTITY_REACH_ID = CrackerConstants.of("extended_entity_reach");
     private static final Identifier EXTENDED_BLOCK_REACH_ID = CrackerConstants.of("extended_block_reach");
 
-    public static final ScytheMaterial COPPER = new ScytheMaterial(100, 0.0F, 5, CrackerItemTags.COPPER_TOOL_MATERIALS);
+    public static final ScytheMaterial COPPER = new ScytheMaterial(100, 0.0F, 5, ItemTags.COPPER_TOOL_MATERIALS);
     public static final ScytheMaterial GOLD = new ScytheMaterial(32, 0.0F, 22, ItemTags.GOLD_TOOL_MATERIALS);
     public static final ScytheMaterial IRON = new ScytheMaterial(250, 0.0F, 15, ItemTags.IRON_TOOL_MATERIALS);
-    public static final ScytheMaterial STEEL = new ScytheMaterial(450,  1.5F, 13, CrackerItemTags.STEEL_TOOL_MATERIALS);
+    public static final ScytheMaterial STEEL = new ScytheMaterial(450,  1.5F, 13, CrackerItemTags.STEEL_INGOTS);
     public static final ScytheMaterial DIAMOND = new ScytheMaterial(1561, 3.0F, 10, ItemTags.DIAMOND_TOOL_MATERIALS);
     public static final ScytheMaterial NETHERITE = new ScytheMaterial(2031,  4.0F, 15, ItemTags.NETHERITE_TOOL_MATERIALS);
 

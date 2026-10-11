@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#c:tool/crack_hammer"
+            "items": "#c:tools/crack_hammer"
           }
         ]
       },

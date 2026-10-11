@@ -6,6 +6,6 @@
     "resource_cracker:scythe_steel",
     "resource_cracker:scythe_diamond",
     "resource_cracker:scythe_netherite",
-    "#c:tool/scythe"
+    "#c:tools/scythe"
   ]
 }

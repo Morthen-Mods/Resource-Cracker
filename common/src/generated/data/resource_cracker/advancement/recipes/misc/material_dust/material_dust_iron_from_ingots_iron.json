@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#c:tool/crack_hammer"
+            "items": "#c:tools/crack_hammer"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "resource_cracker:material_dust/material_dust_netherite_from_netherite_ingot"
+        "recipes": "resource_cracker:material_dust/material_dust_iron_from_ingots_iron"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "resource_cracker:material_dust/material_dust_netherite_from_netherite_ingot"
+      "resource_cracker:material_dust/material_dust_iron_from_ingots_iron"
     ]
   }
 }

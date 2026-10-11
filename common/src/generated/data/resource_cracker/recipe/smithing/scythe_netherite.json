@@ -1,6 +1,6 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": "minecraft:netherite_ingot",
+  "addition": "#c:ingots/netherite",
   "base": "resource_cracker:scythe_diamond",
   "result": {
     "id": "resource_cracker:scythe_netherite"

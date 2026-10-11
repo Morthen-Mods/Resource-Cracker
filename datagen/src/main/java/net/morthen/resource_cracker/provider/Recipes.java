@@ -11,6 +11,7 @@ import net.morthen.resource_cracker.helper.BaseRecipes;
 import net.morthen.resource_cracker.item.tags.CrackerItemTags;
 import net.morthen.resource_cracker.registries.BlockRegistry;
 import net.morthen.resource_cracker.registries.ItemRegistry;
+import net.neoforged.neoforge.common.Tags;
 
 public class Recipes extends BaseRecipes {
 
@@ -28,28 +29,28 @@ public class Recipes extends BaseRecipes {
         //  Tools  //
         /////////////
         /* Crack Hammer */
-        crackHammerRecipe(ItemRegistry.CRACK_HAMMER_COPPER.get(), Items.COPPER_INGOT);
-        crackHammerRecipe(ItemRegistry.CRACK_HAMMER_GOLD.get(), Items.GOLD_INGOT);
-        crackHammerRecipe(ItemRegistry.CRACK_HAMMER_IRON.get(), Items.IRON_INGOT);
-        crackHammerRecipe(ItemRegistry.CRACK_HAMMER_DIAMOND.get(), Items.DIAMOND);
-        crackHammerRecipe(ItemRegistry.CRACK_HAMMER_STEEL.get(), ItemRegistry.STEEL_INGOT.get());
-        smithingUpgrade(ItemRegistry.CRACK_HAMMER_NETHERITE.get(), ItemRegistry.CRACK_HAMMER_DIAMOND.get(), Items.NETHERITE_INGOT);
+        crackHammerRecipe(ItemRegistry.CRACK_HAMMER_COPPER.get(), Tags.Items.INGOTS_COPPER);
+        crackHammerRecipe(ItemRegistry.CRACK_HAMMER_GOLD.get(), Tags.Items.INGOTS_GOLD);
+        crackHammerRecipe(ItemRegistry.CRACK_HAMMER_IRON.get(), Tags.Items.INGOTS_IRON);
+        crackHammerRecipe(ItemRegistry.CRACK_HAMMER_DIAMOND.get(), Tags.Items.GEMS_DIAMOND);
+        crackHammerRecipe(ItemRegistry.CRACK_HAMMER_STEEL.get(), CrackerItemTags.STEEL_INGOTS);
+        smithingUpgrade(ItemRegistry.CRACK_HAMMER_NETHERITE.get(), ItemRegistry.CRACK_HAMMER_DIAMOND.get(), Tags.Items.INGOTS_NETHERITE);
 
         /*  Chisel  */
-        chiselRecipe(ItemRegistry.CHISEL_COPPER.get(), Items.COPPER_INGOT);
-        chiselRecipe(ItemRegistry.CHISEL_GOLD.get(), Items.GOLD_INGOT);
-        chiselRecipe(ItemRegistry.CHISEL_IRON.get(), Items.IRON_INGOT);
-        chiselRecipe(ItemRegistry.CHISEL_DIAMOND.get(), Items.DIAMOND);
-        chiselRecipe(ItemRegistry.CHISEL_STEEL.get(), ItemRegistry.STEEL_INGOT.get());
-        smithingUpgrade(ItemRegistry.CHISEL_NETHERITE.get(), ItemRegistry.CHISEL_DIAMOND.get(), Items.NETHERITE_INGOT);
+        chiselRecipe(ItemRegistry.CHISEL_COPPER.get(), Tags.Items.INGOTS_COPPER);
+        chiselRecipe(ItemRegistry.CHISEL_GOLD.get(), Tags.Items.INGOTS_GOLD);
+        chiselRecipe(ItemRegistry.CHISEL_IRON.get(), Tags.Items.INGOTS_IRON);
+        chiselRecipe(ItemRegistry.CHISEL_DIAMOND.get(), Tags.Items.GEMS_DIAMOND);
+        chiselRecipe(ItemRegistry.CHISEL_STEEL.get(), CrackerItemTags.STEEL_INGOTS);
+        smithingUpgrade(ItemRegistry.CHISEL_NETHERITE.get(), ItemRegistry.CHISEL_DIAMOND.get(), Tags.Items.INGOTS_NETHERITE);
 
         /* Scythe */
-        scytheRecipe(ItemRegistry.SCYTHE_COPPER.get(), Items.COPPER_INGOT);
-        scytheRecipe(ItemRegistry.SCYTHE_IRON.get(), Items.IRON_INGOT);
-        scytheRecipe(ItemRegistry.SCYTHE_GOLD.get(), Items.GOLD_INGOT);
-        scytheRecipe(ItemRegistry.SCYTHE_STEEL.get(), ItemRegistry.STEEL_INGOT.get());
-        scytheRecipe(ItemRegistry.SCYTHE_DIAMOND.get(), Items.DIAMOND);
-        smithingUpgrade(ItemRegistry.SCYTHE_NETHERITE.get(), ItemRegistry.SCYTHE_DIAMOND.get(), Items.NETHERITE_INGOT);
+        scytheRecipe(ItemRegistry.SCYTHE_COPPER.get(), Tags.Items.INGOTS_COPPER);
+        scytheRecipe(ItemRegistry.SCYTHE_IRON.get(), Tags.Items.INGOTS_IRON);
+        scytheRecipe(ItemRegistry.SCYTHE_GOLD.get(), Tags.Items.INGOTS_GOLD);
+        scytheRecipe(ItemRegistry.SCYTHE_STEEL.get(), CrackerItemTags.STEEL_INGOTS);
+        scytheRecipe(ItemRegistry.SCYTHE_DIAMOND.get(), Tags.Items.GEMS_DIAMOND);
+        smithingUpgrade(ItemRegistry.SCYTHE_NETHERITE.get(), ItemRegistry.SCYTHE_DIAMOND.get(), Tags.Items.INGOTS_NETHERITE);
 
         ////////////////////////
         //   Material Dusts   //
@@ -59,13 +60,13 @@ public class Recipes extends BaseRecipes {
         materialDustRecipe(ItemRegistry.MATERIAL_DUST_IRON.get(), Items.RAW_IRON, 2);
         materialDustRecipe(ItemRegistry.MATERIAL_DUST_GOLD.get(), Items.RAW_GOLD, 2);
 
-        materialDustRecipe(ItemRegistry.MATERIAL_DUST_COPPER.get(), Items.COPPER_INGOT, 1);
-        materialDustRecipe(ItemRegistry.MATERIAL_DUST_IRON.get(), Items.IRON_INGOT, 1);
-        materialDustRecipe(ItemRegistry.MATERIAL_DUST_GOLD.get(), Items.GOLD_INGOT, 1);
-        materialDustRecipe(ItemRegistry.MATERIAL_DUST_STEEL.get(), ItemRegistry.STEEL_INGOT.get(), 1);
+        materialDustRecipe(ItemRegistry.MATERIAL_DUST_COPPER.get(), Tags.Items.INGOTS_COPPER, 1);
+        materialDustRecipe(ItemRegistry.MATERIAL_DUST_IRON.get(), Tags.Items.INGOTS_IRON, 1);
+        materialDustRecipe(ItemRegistry.MATERIAL_DUST_GOLD.get(), Tags.Items.INGOTS_GOLD, 1);
+        materialDustRecipe(ItemRegistry.MATERIAL_DUST_STEEL.get(), CrackerItemTags.STEEL_INGOTS, 1);
         materialDustRecipe(ItemRegistry.MATERIAL_DUST_DIAMOND.get(), Items.DIAMOND, 1);
         materialDustRecipe(ItemRegistry.MATERIAL_DUST_NETHERITE_SCRAP.get(), Items.NETHERITE_SCRAP, 1);
-        materialDustRecipe(ItemRegistry.MATERIAL_DUST_NETHERITE.get(), Items.NETHERITE_INGOT, 1);
+        materialDustRecipe(ItemRegistry.MATERIAL_DUST_NETHERITE.get(), Tags.Items.INGOTS_NETHERITE, 1);
         materialDustRecipe(ItemRegistry.MATERIAL_DUST_EMERALD.get(), Items.EMERALD, 1);
 
         materialDustRecipe(ItemRegistry.MATERIAL_DUST_DIAMOND.get(), Items.DIAMOND_ORE, 2);

@@ -11,8 +11,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.morthen.resource_cracker.CrackerConstants;
 import net.morthen.resource_cracker.item.tags.CrackerItemTags;
+import net.morthen.resource_cracker.registries.BlockRegistry;
 import net.morthen.resource_cracker.registries.ItemRegistry;
 import net.morthen.resourcelibrary.registration.RegistryObject;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 import org.jetbrains.annotations.NotNull;
 
@@ -51,10 +53,10 @@ public class ItemTags extends ItemTagsProvider {
                         ItemRegistry.SCYTHE_NETHERITE));
 
         this.tag(CrackerItemTags.CRACK_HAMMER_INGREDIENTS)
-                .addTag(CrackerItemTags.LEATHER);
+                .addTag(Tags.Items.LEATHERS).add(ItemIds.RABBIT_HIDE);
 
         this.tag(CrackerItemTags.SCYTHE_INGREDIENTS)
-                .addTag(CrackerItemTags.LEATHER);
+                .addTag(Tags.Items.LEATHERS).add(ItemIds.RABBIT_HIDE);
 
         this.addAll(net.minecraft.tags.ItemTags.SWORDS,
                 List.of(ItemRegistry.SCYTHE_COPPER,
@@ -91,12 +93,12 @@ public class ItemTags extends ItemTagsProvider {
         this.add(CrackerItemTags.EMERALD_NUGGETS, ItemRegistry.NUGGET_EMERALD);
         this.add(CrackerItemTags.STEEL_INGOTS, ItemRegistry.STEEL_INGOT);
 
-        this.tag(CrackerItemTags.LEATHER).addAll(List.of(ItemIds.LEATHER, ItemIds.RABBIT_HIDE));
+        this.tag(Tags.Items.LEATHERS).add(ItemIds.LEATHER);
 
-        this.tag(CrackerItemTags.COPPER_TOOL_MATERIALS).add(ItemIds.COPPER_INGOT);
-        this.add(CrackerItemTags.STEEL_TOOL_MATERIALS, ItemRegistry.STEEL_INGOT);
+        this.tag(CrackerItemTags.STEEL_BLOCKS).add(ResourceKey.create(Registries.ITEM, BlockRegistry.STEEL_BLOCK.getId()));
+        this.tag(Tags.Items.STORAGE_BLOCKS).addTag(CrackerItemTags.STEEL_BLOCKS);
 
-        this.tag(CrackerItemTags.DUSTS)
+        this.tag(Tags.Items.DUSTS)
                 .addTag(CrackerItemTags.COAL_DUSTS)
                 .addTag(CrackerItemTags.CARBON_DUSTS)
                 .addTag(CrackerItemTags.COPPER_DUSTS)
@@ -110,21 +112,23 @@ public class ItemTags extends ItemTagsProvider {
                 .addTag(CrackerItemTags.NETHERITE_SCRAP_DUSTS)
                 .addTag(CrackerItemTags.NETHERITE_DUSTS);
 
-        this.tag(CrackerItemTags.NUGGETS)
+        this.tag(Tags.Items.NUGGETS)
                 .addTag(CrackerItemTags.DIAMOND_NUGGETS)
                 .addTag(CrackerItemTags.EMERALD_NUGGETS);
 
-        this.add(CrackerItemTags.INGOTS, ItemRegistry.STEEL_INGOT);
+        this.add(Tags.Items.INGOTS, ItemRegistry.STEEL_INGOT);
         this.add(CrackerItemTags.GARLIC, ItemRegistry.GARLIC);
         this.add(CrackerItemTags.BEEF_JERKY, ItemRegistry.BEEF_JERKY);
-        this.addAll(CrackerItemTags.FOODS, List.of(ItemRegistry.GARLIC, ItemRegistry.BEEF_JERKY));
+        this.addAll(Tags.Items.FOODS, List.of(ItemRegistry.GARLIC, ItemRegistry.BEEF_JERKY));
+        this.add(Tags.Items.FOODS_VEGETABLE, ItemRegistry.GARLIC);
+        this.add(Tags.Items.FOODS_COOKED_MEAT, ItemRegistry.BEEF_JERKY);
 
-        this.tag(CrackerItemTags.TOOLS)
+        this.tag(Tags.Items.TOOLS)
                 .addTag(CrackerItemTags.CRACK_HAMMER)
                 .addTag(CrackerItemTags.CHISEL)
                 .addTag(CrackerItemTags.SCYTHE);
 
-        this.tag(CrackerItemTags.ENCHANTABLES).addTag(CrackerItemTags.SCYTHE);
+        this.tag(Tags.Items.ENCHANTABLES).addTag(CrackerItemTags.SCYTHE);
 
         this.tag(net.minecraft.tags.ItemTags.WEAPON_ENCHANTABLE).addTag(CrackerItemTags.SCYTHE);
         this.tag(net.minecraft.tags.ItemTags.SHARP_WEAPON_ENCHANTABLE).addTag(CrackerItemTags.SCYTHE);

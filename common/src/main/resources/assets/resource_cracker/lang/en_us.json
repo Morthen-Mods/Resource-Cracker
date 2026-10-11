@@ -102,7 +102,7 @@
   "config.resource_cracker.tool_settings.diamond.label": "Diamond",
   "config.resource_cracker.tool_settings.netherite.label":"Netherite",
 
-  "tag.item.c.blocks.steel": "Steel Blocks",
+  "tag.item.c.storage_blocks.steel": "Steel Blocks",
 
   "tag.item.c.dusts.carbon": " Carbon Dusts",
   "tag.item.c.dusts.coal": "Coal Dusts",

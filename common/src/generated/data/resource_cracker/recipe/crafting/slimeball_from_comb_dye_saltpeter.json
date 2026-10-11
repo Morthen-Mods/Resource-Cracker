@@ -3,7 +3,7 @@
   "key": {
     "C": "minecraft:green_dye",
     "H": "minecraft:honeycomb",
-    "S": "#c:dust/saltpeter"
+    "S": "#c:dusts/saltpeter"
   },
   "pattern": [
     "HCS"

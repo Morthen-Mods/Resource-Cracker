@@ -1,7 +1,7 @@
 {
   "values": [
-    "#c:tool/scythe",
-    "#c:tool/chisel",
-    "#c:tool/crack_hammer"
+    "#c:tools/scythe",
+    "#c:tools/chisel",
+    "#c:tools/crack_hammer"
   ]
 }

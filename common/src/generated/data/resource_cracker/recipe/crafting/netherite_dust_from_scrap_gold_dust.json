@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "G": "#c:dust/gold",
-    "N": "#c:dust/netherite_scrap"
+    "G": "#c:dusts/gold",
+    "N": "#c:dusts/netherite_scrap"
   },
   "pattern": [
     "NNN",

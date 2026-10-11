@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "I": "minecraft:diamond",
+    "I": "#c:gems/diamond",
     "S": "minecraft:stick",
-    "T": "#c:tool/scythe/crafting_ingredients"
+    "T": "#c:tools/scythe/crafting_ingredients"
   },
   "pattern": [
     "IIT",

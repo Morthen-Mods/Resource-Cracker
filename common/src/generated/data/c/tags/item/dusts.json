@@ -1,16 +1,16 @@
 {
   "values": [
-    "#c:dust/coal",
-    "#c:dust/carbon",
-    "#c:dust/copper",
-    "#c:dust/iron",
-    "#c:dust/gold",
-    "#c:dust/diamond",
-    "#c:dust/emerald",
-    "#c:dust/sulfur",
-    "#c:dust/saltpeter",
-    "#c:dust/steel",
-    "#c:dust/netherite_scrap",
-    "#c:dust/netherite"
+    "#c:dusts/coal",
+    "#c:dusts/carbon",
+    "#c:dusts/copper",
+    "#c:dusts/iron",
+    "#c:dusts/gold",
+    "#c:dusts/diamond",
+    "#c:dusts/emerald",
+    "#c:dusts/sulfur",
+    "#c:dusts/saltpeter",
+    "#c:dusts/steel",
+    "#c:dusts/netherite_scrap",
+    "#c:dusts/netherite"
   ]
 }

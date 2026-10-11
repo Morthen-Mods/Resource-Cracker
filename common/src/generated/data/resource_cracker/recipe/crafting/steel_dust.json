@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "C": "#c:dust/carbon",
-    "I": "#c:dust/iron"
+    "C": "#c:dusts/carbon",
+    "I": "#c:dusts/iron"
   },
   "pattern": [
     "CC",

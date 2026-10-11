@@ -1,6 +1,6 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": "minecraft:netherite_ingot",
+  "addition": "#c:ingots/netherite",
   "base": "resource_cracker:crack_hammer_diamond",
   "result": {
     "id": "resource_cracker:crack_hammer_netherite"

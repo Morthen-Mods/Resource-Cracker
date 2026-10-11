@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#c:dust/netherite_scrap"
+            "items": "#c:dusts/netherite_scrap"
           }
         ]
       },

@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "I": "minecraft:copper_ingot",
+    "I": "#c:ingots/copper",
     "S": "minecraft:stick",
-    "T": "#c:tool/crack_hammer/crafting_ingredients"
+    "T": "#c:tools/crack_hammer/crafting_ingredients"
   },
   "pattern": [
     " IT",
