@@ -1,10 +1,10 @@
 package net.morthen.resource_cracker.item;
 
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStackTemplate;
@@ -17,14 +17,14 @@ import java.util.function.Supplier;
 
 public class CrackHammerItem extends ResourceCraftingRemainder {
     private final Supplier<Integer> durability;
-    private final Holder<Item> repairItem;
+    private final TagKey<Item> repairItems;
 
-    public CrackHammerItem(Supplier<Integer> durability, Holder<Item> repairItem, Properties properties) {
+    public CrackHammerItem(Supplier<Integer> durability, TagKey<Item> repairItems, Properties properties) {
         super(properties
                 .component(DataComponents.MAX_STACK_SIZE, 1)
                 .component(DataComponents.LORE, new ItemLore(List.of(), List.of(Component.translatable("item.crack_hammer.tooltip").withStyle(ChatFormatting.GOLD)))));
         this.durability = durability;
-        this.repairItem = repairItem;
+        this.repairItems = repairItems;
     }
 
     @Override
@@ -47,6 +47,6 @@ public class CrackHammerItem extends ResourceCraftingRemainder {
         stack.set(DataComponents.DAMAGE, 0);
 
         stack.set(DataComponents.REPAIR_COST, 1);
-        stack.set(DataComponents.REPAIRABLE, new Repairable(HolderSet.direct(this.repairItem)));
+        stack.set(DataComponents.REPAIRABLE, new Repairable(BuiltInRegistries.ITEM.getOrThrow(this.repairItems)));
     }
 }

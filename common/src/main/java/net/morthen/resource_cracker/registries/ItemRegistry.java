@@ -1,19 +1,19 @@
 package net.morthen.resource_cracker.registries;
 
-import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.morthen.resource_cracker.CrackerConstants;
 import net.morthen.resource_cracker.config.ToolConfig;
 import net.morthen.resource_cracker.item.ChiselItem;
 import net.morthen.resource_cracker.item.CrackHammerItem;
 import net.morthen.resource_cracker.item.ScytheItem;
 import net.morthen.resource_cracker.item.food.CrackerFoodProperties;
+import net.morthen.resource_cracker.item.tags.CrackerItemTags;
 import net.morthen.resource_cracker.item.materials.ScytheMaterial;
 import net.morthen.resourcelibrary.registration.RegistryObject;
 import net.morthen.resourcelibrary.registration.RegistryProvider;
@@ -39,19 +39,19 @@ public class ItemRegistry {
     public static final RegistryObject<Item> NUGGET_DIAMOND = register("nugget_diamond");
     public static final RegistryObject<Item> NUGGET_EMERALD = register("nugget_emerald");
 
-    public static final RegistryObject<Item> CRACK_HAMMER_COPPER = register("crack_hammer_copper", properties -> new CrackHammerItem(() -> ToolConfig.copperHammer, Holder.direct(Items.COPPER_INGOT), properties));
-    public static final RegistryObject<Item> CRACK_HAMMER_GOLD = register("crack_hammer_gold", properties -> new CrackHammerItem(() -> ToolConfig.goldHammer, Holder.direct(Items.GOLD_INGOT), properties));
-    public static final RegistryObject<Item> CRACK_HAMMER_IRON = register("crack_hammer_iron", properties -> new CrackHammerItem(() -> ToolConfig.ironHammer, Holder.direct(Items.IRON_INGOT), properties));
-    public static final RegistryObject<Item> CRACK_HAMMER_STEEL = register("crack_hammer_steel", properties -> new CrackHammerItem(() -> ToolConfig.steelHammer, Holder.direct(STEEL_INGOT.get()), properties));
-    public static final RegistryObject<Item> CRACK_HAMMER_DIAMOND = register("crack_hammer_diamond", properties -> new CrackHammerItem(() -> ToolConfig.diamondHammer, Holder.direct(Items.DIAMOND), properties));
-    public static final RegistryObject<Item> CRACK_HAMMER_NETHERITE = register("crack_hammer_netherite", properties -> new CrackHammerItem(() -> ToolConfig.netheriteHammer, Holder.direct(Items.NETHERITE_INGOT), properties.fireResistant()));
+    public static final RegistryObject<Item> CRACK_HAMMER_COPPER = register("crack_hammer_copper", properties -> new CrackHammerItem(() -> ToolConfig.copperHammer, ItemTags.COPPER_TOOL_MATERIALS, properties));
+    public static final RegistryObject<Item> CRACK_HAMMER_GOLD = register("crack_hammer_gold", properties -> new CrackHammerItem(() -> ToolConfig.goldHammer, ItemTags.GOLD_TOOL_MATERIALS, properties));
+    public static final RegistryObject<Item> CRACK_HAMMER_IRON = register("crack_hammer_iron", properties -> new CrackHammerItem(() -> ToolConfig.ironHammer, ItemTags.IRON_TOOL_MATERIALS, properties));
+    public static final RegistryObject<Item> CRACK_HAMMER_STEEL = register("crack_hammer_steel", properties -> new CrackHammerItem(() -> ToolConfig.steelHammer, CrackerItemTags.STEEL_INGOTS, properties));
+    public static final RegistryObject<Item> CRACK_HAMMER_DIAMOND = register("crack_hammer_diamond", properties -> new CrackHammerItem(() -> ToolConfig.diamondHammer, ItemTags.DIAMOND_TOOL_MATERIALS, properties));
+    public static final RegistryObject<Item> CRACK_HAMMER_NETHERITE = register("crack_hammer_netherite", properties -> new CrackHammerItem(() -> ToolConfig.netheriteHammer, ItemTags.NETHERITE_TOOL_MATERIALS, properties.fireResistant()));
 
-    public static final RegistryObject<Item> CHISEL_COPPER = register("chisel_copper", properties -> new ChiselItem(() -> ToolConfig.copperChisel, Holder.direct(Items.COPPER_INGOT), properties));
-    public static final RegistryObject<Item> CHISEL_GOLD = register("chisel_gold", properties -> new ChiselItem(() -> ToolConfig.goldChisel, Holder.direct(Items.GOLD_INGOT), properties));
-    public static final RegistryObject<Item> CHISEL_IRON = register("chisel_iron", properties -> new ChiselItem(() -> ToolConfig.ironChisel, Holder.direct(Items.IRON_INGOT), properties));
-    public static final RegistryObject<Item> CHISEL_STEEL = register("chisel_steel", properties -> new ChiselItem(() -> ToolConfig.steelChisel, Holder.direct(STEEL_INGOT.get()), properties));
-    public static final RegistryObject<Item> CHISEL_DIAMOND = register("chisel_diamond", properties -> new ChiselItem(() -> ToolConfig.diamondChisel, Holder.direct(Items.DIAMOND), properties));
-    public static final RegistryObject<Item> CHISEL_NETHERITE = register("chisel_netherite", properties -> new ChiselItem(() -> ToolConfig.netheriteChisel, Holder.direct(Items.NETHERITE_INGOT), properties.fireResistant()));
+    public static final RegistryObject<Item> CHISEL_COPPER = register("chisel_copper", properties -> new ChiselItem(() -> ToolConfig.copperChisel, ItemTags.COPPER_TOOL_MATERIALS, properties));
+    public static final RegistryObject<Item> CHISEL_GOLD = register("chisel_gold", properties -> new ChiselItem(() -> ToolConfig.goldChisel, ItemTags.GOLD_TOOL_MATERIALS, properties));
+    public static final RegistryObject<Item> CHISEL_IRON = register("chisel_iron", properties -> new ChiselItem(() -> ToolConfig.ironChisel, ItemTags.IRON_TOOL_MATERIALS, properties));
+    public static final RegistryObject<Item> CHISEL_STEEL = register("chisel_steel", properties -> new ChiselItem(() -> ToolConfig.steelChisel, CrackerItemTags.STEEL_INGOTS, properties));
+    public static final RegistryObject<Item> CHISEL_DIAMOND = register("chisel_diamond", properties -> new ChiselItem(() -> ToolConfig.diamondChisel, ItemTags.DIAMOND_TOOL_MATERIALS, properties));
+    public static final RegistryObject<Item> CHISEL_NETHERITE = register("chisel_netherite", properties -> new ChiselItem(() -> ToolConfig.netheriteChisel, ItemTags.NETHERITE_TOOL_MATERIALS, properties.fireResistant()));
 
     public static final RegistryObject<Item> SCYTHE_COPPER = register("scythe_copper", properties -> new ScytheItem(ScytheMaterial.COPPER, 2, -1.8f, properties));
     public static final RegistryObject<Item> SCYTHE_GOLD = register("scythe_gold", properties -> new ScytheItem(ScytheMaterial.GOLD, 3, -1.8f, properties));
