@@ -1,2 +1,2 @@
-#### v3.1.3
-  - fix Scythe Tooltip not updating when changing Radius setting
+#### v3.2.0
+  - update to 26.3
